@@ -1,0 +1,11 @@
+#chart_div{
+  overflow: auto;
+  height: 800px;
+  cursor: grab; cursor : -o-grab; cursor : -moz-grab; cursor : -webkit-grab;
+  width: 100%;
+}
+#erd-filter .form-item .form-type-checkbox{
+  display: block;
+  padding: 5px 5px;
+  margin: 0px 8px 0;
+}
