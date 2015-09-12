@@ -41,7 +41,8 @@ function erd_page() {
   drupal_add_js(drupal_get_path('module', 'entity_reference_diagram') . '/relations-draw.js', 'file');
   $filter = drupal_get_form('erd_filter', $relation_strings);
   drupal_add_css(drupal_get_path('module', 'entity_reference_diagram') . '/relations-draw.css', 'file');
-  return drupal_render($filter) . '<div id="chart_div" class="dragscroll"></div>';
+  $info = '<p>' . t('The relationship is composited as: ') . '<b>' . t('[entity_reference_fieldname]@[bundle]:[type] -> [target_type]') . '</b></p>';
+  return drupal_render($filter) . $info . '<div id="chart_div" class="dragscroll"></div>';
 }
 
 function format_relations($sources, $field_name, $targets, &$formatted_relations, &$regsitered_relations, &$relation_strings) {
@@ -95,7 +96,6 @@ function erd_filter($form, &$form_state, $relations) {
     '#collapsible' => TRUE,
     '#collapsed' => TRUE,
     '#description' => t('There might be an situation that lots references are just for easy accesses to other content. They are not meant to define the real "architecture level" entity relationship. You can filter out those unnecessary relationships to have a much cleaner and more meanningful entity relationship diagram.')
-      . '<br /><br />' . t('The relationship is composited as: ') . '<b>' . t('[entity_reference_fieldname]@[bundle]:[type] -> [target_type]') . '</b>'
   );
   $options = array();
   foreach($relations AS $k => $val) {
