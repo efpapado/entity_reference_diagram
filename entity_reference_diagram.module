@@ -15,6 +15,10 @@ function entity_reference_diagram_menu() {
   return $items;
 }
 
+/**
+ * page callback
+ * @return type
+ */
 function erd_page() {
 //  $entity_info = entity_get_info();
 //  dsm($entity_info);
@@ -45,6 +49,16 @@ function erd_page() {
   return drupal_render($filter) . $info . '<div id="chart_div" class="dragscroll"></div>';
 }
 
+/**
+ * get a formated relations list
+ * @param type $sources
+ * @param type $field_name
+ * @param type $targets
+ * @param type $formatted_relations
+ * @param type $regsitered_relations
+ * @param type $relation_strings
+ * @return type
+ */
 function format_relations($sources, $field_name, $targets, &$formatted_relations, &$regsitered_relations, &$relation_strings) {
   foreach ($sources AS $bundle_key => $src) {
     foreach ($src AS $src_nodetype) {
@@ -75,6 +89,13 @@ function format_relations($sources, $field_name, $targets, &$formatted_relations
   return $formatted_relations;
 }
 
+/**
+ * an array search function
+ * @param type $direction
+ * @param type $revert_direction
+ * @param type $regsitered_relations
+ * @return type
+ */
 function getRelationKey($direction, $revert_direction, $regsitered_relations) {
   $keys = array_keys($regsitered_relations, $direction);
   if (empty($keys)) {
@@ -88,6 +109,13 @@ function getRelationKey($direction, $revert_direction, $regsitered_relations) {
   }
 }
 
+/**
+ * Form
+ * @param type $form
+ * @param type $form_state
+ * @param type $relations
+ * @return string
+ */
 function erd_filter($form, &$form_state, $relations) {
   $form['filter'] = array(
     '#type' => 'fieldset',
@@ -119,6 +147,11 @@ function erd_filter($form, &$form_state, $relations) {
   return $form;
 }
 
+/**
+ * filter submit
+ * @param type $form
+ * @param type $form_state
+ */
 function erd_filter_submit($form, $form_state){
   $values = array_filter($form_state['values']['entity_ref_fields']);
   if(empty($values)) {
@@ -128,6 +161,11 @@ function erd_filter_submit($form, $form_state){
   }
 }
 
+/**
+ * filter reset
+ * @param type $form
+ * @param type $form_state
+ */
 function erd_filter_reset($form, $form_state){
   unset($_SESSION['entity_ref_fields']);
 }
