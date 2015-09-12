@@ -37,7 +37,7 @@ function erd_page() {
       format_relations($relations[$field_name]['sources'], $field_name, $relations[$field_name]['targets'], $formatted_relations, $regsitered_relations, $relation_strings);
     }
   }
-  drupal_alter('entity_relations', $relations);
+  drupal_alter('entity_relations', &$relations);
   
   drupal_add_js('var entity_relations = ' . drupal_json_encode($formatted_relations), 'inline');
   drupal_add_js('https://www.google.com/jsapi', 'external');
