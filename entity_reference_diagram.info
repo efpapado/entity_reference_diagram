@@ -1,5 +1,0 @@
-name = Entity reference diagram
-description = Visualize the entity references relationships.
-core = 7.x
-dependencies[] = entityreference
-package = Fields

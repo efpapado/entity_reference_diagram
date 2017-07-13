@@ -1,21 +1,6 @@
 <?php
 
 /**
- * hook_menu()
- */
-function entity_reference_diagram_menu() {
-  $items['admin/structure/erd'] = array(
-    'title' => 'Entity reference diagram',
-    'description' => 'Visualize the entity references relationships',
-    'page callback' => 'erd_page',
-    'access arguments' => array('administer site configuration'),
-    'type' => MENU_NORMAL_ITEM,
-  );
-
-  return $items;
-}
-
-/**
  * page callback
  * @return type
  */

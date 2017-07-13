@@ -1,0 +1,7 @@
+entity_reference_diagram.erd_interface:
+  path: '/admin/structure/erd'
+  defaults:
+    _controller: '\Drupal\entity_reference_diagram\Controller\erdController::erdPage'
+    _title: 'Entity reference diagram'
+  requirements:
+    _permission: 'administer site configuration'
