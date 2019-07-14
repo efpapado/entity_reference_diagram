@@ -21,7 +21,10 @@ function drawChart() {
    */
   var selves = [];
   var dummy_keys = [];
-  entity_relations.forEach(function(e, i, a) {
+  var entity_relations = JSON.parse(drupalSettings.erd.entity_relations);
+  
+  for(var j in entity_relations) {
+    var e = entity_relations[j];
     if (e.self === e.parent) {
       // self relation
       self_relations.push({
@@ -54,7 +57,7 @@ function drawChart() {
       }
       rows.push(row);
     }
-  });
+  }
   //tidy up self relations
   self_relations.forEach(function(e, i, a) {
     var k = getNameKey(e.name, rows);

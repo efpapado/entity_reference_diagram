@@ -1,0 +1,11 @@
+erdInterface:
+  version: 1.x
+  css:
+    theme:
+      relations-draw.css: {}
+  js:
+    //www.google.com/jsapi: {}
+    //cdn.rawgit.com/asvd/dragscroll/master/dragscroll.js: {}
+    relations-draw.js: {}
+  dependencies:
+    - core/drupalSettings
