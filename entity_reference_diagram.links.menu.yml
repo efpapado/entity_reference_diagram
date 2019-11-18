@@ -2,4 +2,4 @@ entity_reference_diagram.erd_interface:
   title: 'Entity references diagram'
   parent: system.admin_structure
   description: 'Entity references diagram overview.'
-  route_name: entity_reference_diagram.erd_interface
+  route_name: entity_reference_diagram.erd_controller_table

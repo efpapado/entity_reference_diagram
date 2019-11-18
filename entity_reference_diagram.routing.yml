@@ -1,7 +1,7 @@
-entity_reference_diagram.erd_interface:
-  path: '/admin/structure/erd'
+entity_reference_diagram.erd_controller_table:
+  path: '/entity-reference-diagram/table'
   defaults:
-    _controller: '\Drupal\entity_reference_diagram\Controller\erdController::erdPage'
-    _title: 'Entity reference diagram'
+    _controller: '\Drupal\entity_reference_diagram\Controller\ERDController::table'
+    _title: 'Entity reference diagram: Simple table'
   requirements:
     _permission: 'administer site configuration'
