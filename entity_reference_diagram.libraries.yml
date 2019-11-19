@@ -1,5 +1,8 @@
 simple_table:
   version: 2.x
+  css:
+    component:
+      css/simple-table.css: {}
   js:
     js/simple-table.js: {}
   dependencies:

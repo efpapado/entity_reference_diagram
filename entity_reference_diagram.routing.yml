@@ -1,5 +1,5 @@
 entity_reference_diagram.erd_controller_table:
-  path: '/entity-reference-diagram/table'
+  path: '/admin/entity-reference-diagram/table'
   defaults:
     _controller: '\Drupal\entity_reference_diagram\Controller\ERDController::table'
     _title: 'Entity reference diagram: Simple table'
