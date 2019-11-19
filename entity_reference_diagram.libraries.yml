@@ -1,0 +1,7 @@
+simple_table:
+  version: 2.x
+  js:
+    js/simple-table.js: {}
+  dependencies:
+    - core/jquery
+    - core/jquery.once

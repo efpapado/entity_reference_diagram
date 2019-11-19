@@ -151,13 +151,22 @@ class ERDController extends ControllerBase {
       '#rows' => $rows,
       '#sticky' => TRUE,
       '#empty' => $this->t('There are no entity reference fields.'),
+      '#attributes' => [
+        'id' => 'erd-simple-table',
+      ],
     ];
+    $table['#attached']['library'][] = 'entity_reference_diagram/simple_table';
 
     $filters = [
       '#type' => 'container',
-      'text' => [
+      'text' => [ // @TODO move the whole filter structure in javascript!
         '#type' => 'textfield',
         '#title' => $this->t('Filter'),
+        '#size' => 10,
+        '#placeholder' => $this->t('Filter'),
+        '#attributes' => [
+          'id' => 'erd-search',
+        ],
       ],
     ];
 
