@@ -1,5 +1,5 @@
 entity_reference_diagram.erd_interface:
   title: 'Entity references diagram'
-  parent: system.admin_structure
+  parent: system.admin_reports
   description: 'Entity references diagram overview.'
   route_name: entity_reference_diagram.erd_controller_table
