@@ -162,4 +162,34 @@ class ERDController extends ControllerBase {
     ];
   }
 
+  /**
+   * Renders the entity references in a diagram.
+   *
+   * @return array
+   *   Render array.
+   */
+  public function diagram() {
+    foreach ($this->entityReferences as $entity_type_id => $fields) {
+      foreach ($fields as $field_name => $target_entity_type_id) {
+        $key = "{$entity_type_id}.{$field_name}";
+        $rows[] = [
+          $entity_type_id,
+          $this->entityDefinitions[$entity_type_id]->getLabel(),
+          $field_name,
+          $this->fieldConfigs[$key]->getLabel(),
+          $target_entity_type_id,
+          $this->entityDefinitions[$target_entity_type_id]->getLabel(),
+        ];
+      }
+    }
+
+//    $table['#attached']['library'][] = 'entity_reference_diagram/simple_table';
+
+    return [
+      'test' => [
+        '#markup' => 'test',
+      ],
+    ];
+  }
+
 }
